@@ -38,7 +38,7 @@ public class MenuTest {
     @Test
     public void whenListingBooksShowOnlyAvailableBooks () {
         String expected = "1 - A - Carlos - 1996\n2 - B - Ju - 1987\n";
-        assertEquals(expected, menu.printBooks(books));
+        assertEquals(expected, libraryManagement.printBooks(books));
     }
 
 }

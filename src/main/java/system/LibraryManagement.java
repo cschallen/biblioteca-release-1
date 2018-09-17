@@ -19,6 +19,15 @@ public class LibraryManagement {
         );
     }
 
+    public static String printBooks(List<Book> listBooks) {
+        StringBuilder print = new StringBuilder();
+        for (Book book : listBooks) {
+            if (book.isAvailable())
+                print.append(book.toString()).append("\n");
+        }
+        return print.toString();
+    }
+
     public List<Book> getBooks() {
         return books;
     }
