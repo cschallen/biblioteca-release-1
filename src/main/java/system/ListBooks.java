@@ -1,15 +1,14 @@
 package system;
 
-public class ListBooks implements Option, Library {
+public class ListBooks implements Option {
     private LibraryManagement libraryManagement;
+
+    public ListBooks(LibraryManagement libraryManagement) {
+        this.libraryManagement = libraryManagement;
+    }
 
     @Override
     public void execute() {
         System.out.println(LibraryManagement.printBooks(libraryManagement.getBooks()));
-    }
-
-    @Override
-    public void loadLibraryManagement(LibraryManagement libraryManagement) {
-        this.libraryManagement = libraryManagement;
     }
 }

@@ -18,14 +18,8 @@ public class Menu {
     }
 
     private void executeAction(int id) {
-        Option option = OptionFactory.createOptionById(id);
-        addLibraryManagementWhenCheckingOrReturningBooks(option);
+        Option option = OptionFactory.createOptionById(id, libraryManagement);
         option.execute();
-    }
-
-    private void addLibraryManagementWhenCheckingOrReturningBooks(Option option) {
-        if(option instanceof Library)
-            ((Library) option).loadLibraryManagement(libraryManagement);
     }
 
     private int getOptionFromUser() {

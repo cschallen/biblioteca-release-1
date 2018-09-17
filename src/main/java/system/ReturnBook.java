@@ -2,18 +2,17 @@ package system;
 
 import java.util.Scanner;
 
-public class ReturnBook implements Option, Library {
+public class ReturnBook implements Option {
     private LibraryManagement libraryManagement;
     private Scanner scanner = new Scanner(System.in);
+
+    public ReturnBook(LibraryManagement libraryManagement) {
+        this.libraryManagement = libraryManagement;
+    }
 
     @Override
     public void execute() {
         libraryManagement.changeAvailability(getBookIdToReturn(), false);
-    }
-
-    @Override
-    public void loadLibraryManagement(LibraryManagement libraryManagement) {
-        this.libraryManagement = libraryManagement;
     }
 
     private int getBookIdToReturn() {
