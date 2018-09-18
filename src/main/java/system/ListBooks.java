@@ -9,6 +9,6 @@ public class ListBooks implements Option {
 
     @Override
     public void execute() {
-        System.out.println(LibraryManagement.printBooks(libraryManagement.getBooks()));
+        System.out.println(libraryManagement.printBooks());
     }
 }

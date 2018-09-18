@@ -13,15 +13,16 @@ public class CheckoutBook implements Option {
 
     @Override
     public void execute() {
-        System.out.println(LibraryManagement.printBooks(libraryManagement.getBooks()));
-        System.out.printf("Choose the book's id: ");
-        int idToCheckout = getOptionFromUser();
-        libraryManagement.changeAvailability(idToCheckout, true);
+        showBooksToUser();
+        libraryManagement.changeAvailability(getBookIdToCheckout(), true);
     }
 
-    private int getOptionFromUser() {
-        int option = scanner.nextInt();
-        scanner.nextLine();
-        return option;
+    private void showBooksToUser() {
+        System.out.println(libraryManagement.printBooks());
+    }
+    
+    private int getBookIdToCheckout() {
+        System.out.printf("Choose the book's id: ");
+        return scanner.nextInt();
     }
 }

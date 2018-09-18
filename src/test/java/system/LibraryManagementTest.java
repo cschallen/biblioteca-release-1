@@ -19,7 +19,7 @@ public class LibraryManagementTest {
     public void whenCheckedOutABookShouldRemoveItFromTheList () {
         libraryManagement.changeAvailability(2, true);
         String expected = "1 - A - Carlos - 1996\n";
-        assertEquals(expected, libraryManagement.printBooks(libraryManagement.getBooks()));
+        assertEquals(expected, libraryManagement.printBooks());
     }
 
     @Test
@@ -36,7 +36,7 @@ public class LibraryManagementTest {
     public void whenReturnABookShowTheBookInTheList() {
         libraryManagement.changeAvailability(3, false);
         String expected = "1 - A - Carlos - 1996\n2 - B - Ju - 1987\n3 - C - Mirela - 1990\n";
-        assertEquals(expected, libraryManagement.printBooks(libraryManagement.getBooks()));
+        assertEquals(expected, libraryManagement.printBooks());
     }
 
 

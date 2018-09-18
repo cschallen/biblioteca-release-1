@@ -19,9 +19,9 @@ public class LibraryManagement {
         );
     }
 
-    public static String printBooks(List<Book> listBooks) {
+    public String printBooks() {
         StringBuilder print = new StringBuilder();
-        for (Book book : listBooks) {
+        for (Book book : books) {
             if (book.isAvailable())
                 print.append(book.toString()).append("\n");
         }
