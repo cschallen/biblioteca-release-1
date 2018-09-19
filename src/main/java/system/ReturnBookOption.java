@@ -15,6 +15,11 @@ public class ReturnBookOption implements Option {
     @Override
     public void execute() {
         returnBook(getIdFromUser());
+        showMessage();
+    }
+
+    private void showMessage() {
+        System.out.println(getReturnMessage());
     }
 
     public void returnBook(int id){
