@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Menu {
     private Scanner scanner = new Scanner(System.in);
     private LibraryManagement libraryManagement = new LibraryManagement();
+    private static String WELCOME_MESSAGE = "Welcome";
 
     public void startApp() {
         showWelcomeMessage();
@@ -36,10 +37,8 @@ public class Menu {
     }
 
     private void showWelcomeMessage(){
-        System.out.println(welcomeMessage());
+        System.out.println(WELCOME_MESSAGE);
     }
 
-    public String welcomeMessage() {
-        return "Welcome";
-    }
+
 }

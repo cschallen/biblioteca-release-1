@@ -3,7 +3,7 @@ package system;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class LibraryManagementTest {
     private LibraryManagement libraryManagement;
@@ -11,41 +11,6 @@ public class LibraryManagementTest {
     @Before
     public void setup(){
         libraryManagement = new LibraryManagement();
-    }
-
-    @Test
-    public void whenCheckedOutABookShouldRemoveItFromTheList () {
-        libraryManagement.changeAvailability(2, true);
-        String expected = "1 - A - Carlos - 1996\n";
-        assertEquals(expected, libraryManagement.printBooks());
-    }
-
-    @Test
-    public void showSuccessfullMessageWhenCheckingOut(){
-        assertEquals("Thank you! Enjoy the book", libraryManagement.showCheckoutMessage(true));
-    }
-
-    @Test
-    public void showUnsucessfullMessageWhenCheckingout(){
-        assertEquals("That book is not available", libraryManagement.showCheckoutMessage(false));
-    }
-
-    @Test
-    public void whenReturnABookShowTheBookInTheList() {
-        libraryManagement.changeAvailability(3, false);
-        String expected = "1 - A - Carlos - 1996\n2 - B - Ju - 1987\n3 - C - Mirela - 1990\n";
-        assertEquals(expected, libraryManagement.printBooks());
-    }
-
-
-    @Test
-    public void showSuccessfullMessageWhenReturn(){
-        assertEquals("Thank you for returning the book", libraryManagement.showReturnMessage(true));
-    }
-
-    @Test
-    public void showUnsucessfullMessageWhenReturn(){
-        assertEquals("That is not a valid book to return", libraryManagement.showReturnMessage(false));
     }
 
     @Test
@@ -62,5 +27,11 @@ public class LibraryManagementTest {
     public void whenListingBooksShowOnlyAvailableBooks () {
         String expected = "1 - A - Carlos - 1996\n2 - B - Ju - 1987\n";
         assertEquals(expected, libraryManagement.printBooks());
+    }
+
+    @Test
+    public void getBookByIdTest() {
+        assertEquals(libraryManagement.getBooks().get(2), libraryManagement.getBookById(3));
+        assertNull(libraryManagement.getBookById(14));
     }
 }

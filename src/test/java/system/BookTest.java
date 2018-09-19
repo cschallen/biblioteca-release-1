@@ -33,4 +33,16 @@ public class BookTest {
     public void toStringTest() {
         assertEquals("1 - Hey! - Carlos Schallenberger - 1996", book.toString());
     }
+
+    @Test
+    public void checkoutBookTest() {
+        book.checkoutBook();
+        assertFalse(book.isAvailable());
+    }
+
+    @Test
+    public void returnBookTest() {
+        book.returnBook();
+        assertTrue(book.isAvailable());
+    }
 }

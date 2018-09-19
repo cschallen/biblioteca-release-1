@@ -1,9 +1,9 @@
 package system;
 
-public class ListBooks implements Option {
+public class ListBooksOption implements Option {
     private LibraryManagement libraryManagement;
 
-    public ListBooks(LibraryManagement libraryManagement) {
+    public ListBooksOption(LibraryManagement libraryManagement) {
         this.libraryManagement = libraryManagement;
     }
 

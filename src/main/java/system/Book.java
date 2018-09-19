@@ -23,8 +23,7 @@ public class Book {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) { return false; }
         Book book = (Book) o;
         return Objects.equals(getId(), book.getId());
     }
@@ -38,7 +37,15 @@ public class Book {
         return available;
     }
 
-    public void setAvailable(Boolean available) {
+    private void setAvailable(Boolean available) {
         this.available = available;
+    }
+
+    public void checkoutBook() {
+        setAvailable(false);
+    }
+
+    public void returnBook() {
+        setAvailable(true);
     }
 }

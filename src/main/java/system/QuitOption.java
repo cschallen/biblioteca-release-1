@@ -1,6 +1,6 @@
 package system;
 
-public class Quit implements Option {
+public class QuitOption implements Option {
     @Override
     public void execute() {
         System.exit(0);

@@ -10,22 +10,22 @@ public class OptionFactoryTest {
 
     @Test
     public void shouldReturnAListBooksObjectWhenOptionIsOne() {
-        assertTrue(OptionFactory.createOptionById(1, libraryManagement) instanceof ListBooks);
+        assertTrue(OptionFactory.createOptionById(1, libraryManagement) instanceof ListBooksOption);
     }
 
     @Test
     public void shouldReturnACheckoutBookObjectWhenOptionIsTwo() {
-        assertTrue(OptionFactory.createOptionById(2, libraryManagement) instanceof CheckoutBook);
+        assertTrue(OptionFactory.createOptionById(2, libraryManagement) instanceof CheckoutBookOption);
     }
 
     @Test
     public void shouldReturnAReturnBooksObjectWhenOptionIsThree() {
-        assertTrue(OptionFactory.createOptionById(3, libraryManagement) instanceof ReturnBook);
+        assertTrue(OptionFactory.createOptionById(3, libraryManagement) instanceof ReturnBookOption);
     }
 
     @Test
     public void shouldReturnAQuitObjectWhenOptionIsFour() {
-        assertTrue(OptionFactory.createOptionById(4, libraryManagement) instanceof Quit);
+        assertTrue(OptionFactory.createOptionById(4, libraryManagement) instanceof QuitOption);
     }
 
     @Test

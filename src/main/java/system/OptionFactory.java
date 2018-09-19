@@ -4,13 +4,13 @@ public class OptionFactory {
     public static Option createOptionById(int id, LibraryManagement libraryManagement) {
         switch (id) {
             case 1:
-                return new ListBooks(libraryManagement);
+                return new ListBooksOption(libraryManagement);
             case 2:
-                return new CheckoutBook(libraryManagement);
+                return new CheckoutBookOption(libraryManagement);
             case 3:
-                return new ReturnBook(libraryManagement);
+                return new ReturnBookOption(libraryManagement);
             case 4:
-                return new Quit();
+                return new QuitOption();
             default:
                 return new InvalidOption();
         }

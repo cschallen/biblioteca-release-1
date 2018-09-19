@@ -32,31 +32,12 @@ public class LibraryManagement {
         return books;
     }
 
-    public void changeAvailability(int id, boolean isCheckingOut) {
-        boolean changed = false;
+    public Book getBookById(int id) {
         for (Book book : books){
-            boolean isAvailable = book.isAvailable() == isCheckingOut;
-            if (book.getId().equals(id) && isAvailable) {
-                book.setAvailable(!isCheckingOut);
-                changed = true;
+            if(book.getId().equals(id)) {
+                return book;
             }
         }
-        System.out.println(showMessage(changed, isCheckingOut));
-    }
-
-    private String showMessage(boolean changed, boolean isCheckingOut){
-        if(isCheckingOut){
-            return showCheckoutMessage(changed);
-        }
-        return showReturnMessage(changed);
-    }
-
-
-    public String showCheckoutMessage(boolean changed) {
-        return changed ? "Thank you! Enjoy the book" : "That book is not available";
-    }
-
-    public String showReturnMessage(boolean changed) {
-        return changed ? "Thank you for returning the book" : "That is not a valid book to return";
+        return null;
     }
 }
