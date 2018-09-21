@@ -7,16 +7,20 @@ public class CheckoutBookOption implements Option {
     private LibraryManagement libraryManagement;
     private Scanner scanner = new Scanner(System.in);
     private boolean checkoutSuccess = false;
+    private Login login;
 
     public CheckoutBookOption(LibraryManagement libraryManagement){
         this.libraryManagement = libraryManagement;
+        this.login = new Login(libraryManagement.getCustomers());
     }
 
     @Override
     public void execute() {
-        showBooksToUser();
-        checkout(getIdFromUser());
-        showMessage();
+        if(login.userAuthenticated()) {
+            showBooksToUser();
+            checkout(getIdFromUser());
+            showMessage();
+        }
     }
 
     public void checkout(int id){

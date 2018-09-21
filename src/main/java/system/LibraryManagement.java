@@ -1,12 +1,14 @@
 package system;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class LibraryManagement {
 
     private List<Book> books;
     private List<Movie> movies;
+    private HashMap<String, Customer> customers;
 
     public LibraryManagement () {
         fillLibrary();
@@ -14,6 +16,10 @@ public class LibraryManagement {
 
     public void setBooks(List<Book> books){
         this.books = books;
+    }
+
+    public void setCustomers(HashMap<String, Customer> customers) {
+        this.customers = customers;
     }
 
     public void setMovies(List<Movie> movies) {
@@ -38,7 +44,13 @@ public class LibraryManagement {
                 new Movie(1, "The brother", 1996, "Carlos", 10, true),
                 new Movie(2, "The cousin", 1969, "Nanai", 0, true),
                 new Movie(3, "The sister", 1999, "Milera", 2, false)
-        );    }
+        );
+        this.customers = new HashMap<String, Customer>(){{
+            put("142-4444", new Customer("143-4444", "1t34"));
+            put("010-1001", new Customer("010-1001", "12r4"));
+            put("111-1111", new Customer("111-1111", "1111"));
+        }};
+    }
 
     public String printBooks() {
         StringBuilder print = new StringBuilder();
@@ -76,5 +88,9 @@ public class LibraryManagement {
             }
         }
         return null;
+    }
+
+    public HashMap<String, Customer> getCustomers() {
+        return customers;
     }
 }

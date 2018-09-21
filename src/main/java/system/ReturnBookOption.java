@@ -7,15 +7,19 @@ public class ReturnBookOption implements Option {
     private LibraryManagement libraryManagement;
     private Scanner scanner = new Scanner(System.in);
     private boolean returnSuccess = false;
+    private Login login;
 
     public ReturnBookOption(LibraryManagement libraryManagement) {
         this.libraryManagement = libraryManagement;
+        login = new Login(libraryManagement.getCustomers());
     }
 
     @Override
     public void execute() {
-        returnBook(getIdFromUser());
-        showMessage();
+        if(login.userAuthenticated()) {
+            returnBook(getIdFromUser());
+            showMessage();
+        }
     }
 
     private void showMessage() {

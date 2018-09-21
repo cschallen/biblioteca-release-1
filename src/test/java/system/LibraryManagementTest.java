@@ -27,6 +27,7 @@ public class LibraryManagementTest {
                 new Movie(2, "The cousin", 1969, "Nanai", 0, true),
                 new Movie(3, "The sister", 1999, "Milera", 2, false)
         );
+
         libraryManagement.setBooks(books);
         libraryManagement.setMovies(movies);
     }
