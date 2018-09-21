@@ -12,6 +12,10 @@ public class LibraryManagement {
         fillLibrary();
     }
 
+    public void setBooks(List<Book> books){
+        this.books = books;
+    }
+
     public void fillLibrary() {
         this.books = Arrays.asList(
                 new Book(1, "A", "Carlos", 1996, true),
