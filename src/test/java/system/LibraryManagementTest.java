@@ -71,6 +71,17 @@ public class LibraryManagementTest {
     }
 
     @Test
+    public void whenGettingMovieByValidIdShouldReturnTheObject() {
+        assertEquals(movies.get(2), libraryManagement.getMovieById(3));
+    }
+
+    @Test
+    public void whenGettingMovieWithInvalidIDShouldReturnNull(){
+        assertNull(libraryManagement.getMovieById(14));
+    }
+
+
+    @Test
     public void whenGettingBookByValidIdShouldReturnTheObject() {
         assertEquals(books.get(2), libraryManagement.getBookById(3));
     }

@@ -69,4 +69,12 @@ public class LibraryManagement {
         return null;
     }
 
+    public Movie getMovieById(int id) {
+        for (Movie movie : movies){
+            if(movie.getId().equals(id)) {
+                return movie;
+            }
+        }
+        return null;
+    }
 }
