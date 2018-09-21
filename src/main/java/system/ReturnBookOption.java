@@ -25,7 +25,7 @@ public class ReturnBookOption implements Option {
     public void returnBook(int id){
         Book book = libraryManagement.getBookById(id);
         if(book != null && !book.isAvailable()){
-            book.returnBook();
+            book.returnItem();
             returnSuccess = true;
         }
     }

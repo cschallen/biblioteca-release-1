@@ -10,6 +10,10 @@ public class OptionFactory {
             case 3:
                 return new ReturnBookOption(libraryManagement);
             case 4:
+                return new ListMoviesOption(libraryManagement);
+            case 5:
+                return new CheckoutMovieOption(libraryManagement);
+            case 6:
                 return new QuitOption();
             default:
                 return new InvalidOption();

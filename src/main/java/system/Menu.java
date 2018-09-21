@@ -32,7 +32,9 @@ public class Menu {
         System.out.println("1) List Books");
         System.out.println("2) Checkout Book");
         System.out.println("3) Return Book");
-        System.out.println("4) Quit");
+        System.out.println("4) List Movies");
+        System.out.println("5) Checkout Movie");
+        System.out.println("6) Quit");
         System.out.println("Choose an option: ");
     }
 

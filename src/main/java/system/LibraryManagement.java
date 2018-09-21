@@ -16,6 +16,18 @@ public class LibraryManagement {
         this.books = books;
     }
 
+    public void setMovies(List<Movie> movies) {
+        this.movies = movies;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public List<Movie> getMovies() {
+        return movies;
+    }
+
     public void fillLibrary() {
         this.books = Arrays.asList(
                 new Book(1, "A", "Carlos", 1996, true),
@@ -48,14 +60,6 @@ public class LibraryManagement {
         return print.toString();
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public List<Movie> getMovies() {
-        return movies;
-    }
-
     public Book getBookById(int id) {
         for (Book book : books){
             if(book.getId().equals(id)) {
@@ -64,4 +68,5 @@ public class LibraryManagement {
         }
         return null;
     }
+
 }

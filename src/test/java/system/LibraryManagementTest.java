@@ -12,6 +12,7 @@ import static org.junit.Assert.assertNull;
 public class LibraryManagementTest {
     private LibraryManagement libraryManagement;
     private List<Book> books;
+    private List<Movie> movies;
 
     @Before
     public void setup(){
@@ -21,7 +22,13 @@ public class LibraryManagementTest {
                 new Book(2, "B", "Ju", 1987, true),
                 new Book(3, "C", "Mirela", 1990, false)
         );
+        movies = Arrays.asList(
+                new Movie(1, "The brother", 1996, "Carlos", 10, true),
+                new Movie(2, "The cousin", 1969, "Nanai", 0, true),
+                new Movie(3, "The sister", 1999, "Milera", 2, false)
+        );
         libraryManagement.setBooks(books);
+        libraryManagement.setMovies(movies);
     }
 
     @Test
@@ -44,6 +51,17 @@ public class LibraryManagementTest {
         );
         libraryManagement.setBooks(books);
         assertEquals("", libraryManagement.printBooks());
+    }
+
+    @Test
+    public void whenHaveNoAvailableMoviesShouldReturnAEmptyString(){
+        movies = Arrays.asList(
+                new Movie(1, "The brother", 1996, "Carlos", 10, false),
+                new Movie(2, "The cousin", 1969, "Nanai", 0, false),
+                new Movie(3, "The sister", 1999, "Milera", 2, false)
+        );
+        libraryManagement.setMovies(movies);
+        assertEquals("", libraryManagement.printMovies());
     }
 
     @Test

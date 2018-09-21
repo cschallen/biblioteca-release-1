@@ -24,8 +24,18 @@ public class OptionFactoryTest {
     }
 
     @Test
-    public void shouldReturnAQuitObjectWhenOptionIsFour() {
-        assertTrue(OptionFactory.createOptionById(4, libraryManagement) instanceof QuitOption);
+    public void shouldReturnAListMoviesObjectWhenOptionIsFour() {
+        assertTrue(OptionFactory.createOptionById(4, libraryManagement) instanceof ListMoviesOption);
+    }
+
+    @Test
+    public void shouldReturnACheckOutMovieObjectWhenOptionIsFive() {
+        assertTrue(OptionFactory.createOptionById(5, libraryManagement) instanceof CheckoutMovieOption);
+    }
+
+    @Test
+    public void shouldReturnAQuitObjectWhenOptionIsSix() {
+        assertTrue(OptionFactory.createOptionById(6, libraryManagement) instanceof QuitOption);
     }
 
     @Test

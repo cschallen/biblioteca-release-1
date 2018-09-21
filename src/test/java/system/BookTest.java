@@ -38,13 +38,13 @@ public class BookTest {
 
     @Test
     public void checkoutBookTest() {
-        book.checkoutBook();
+        book.checkoutItem();
         assertFalse(book.isAvailable());
     }
 
     @Test
     public void returnBookTest() {
-        book.returnBook();
+        book.returnItem();
         assertTrue(book.isAvailable());
     }
 }

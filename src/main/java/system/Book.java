@@ -2,23 +2,16 @@ package system;
 
 import java.util.Objects;
 
-public class Book {
-    private Integer id;
+public class Book extends Item{
     private String title;
     private String author;
     private Integer yearPublished;
-    private Boolean available;
 
     public Book(Integer id, String title, String author, Integer yearPublished, Boolean available) {
-        this.id = id;
+        super(id, available);
         this.title = title;
         this.author = author;
         this.yearPublished = yearPublished;
-        this.available = available;
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     @Override
@@ -30,22 +23,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return id + " - " + title + " - " + author + " - " + yearPublished;
+        return getId() + " - " + title + " - " + author + " - " + yearPublished;
     }
 
-    public Boolean isAvailable() {
-        return available;
-    }
-
-    private void setAvailable(Boolean available) {
-        this.available = available;
-    }
-
-    public void checkoutBook() {
-        setAvailable(false);
-    }
-
-    public void returnBook() {
-        setAvailable(true);
-    }
 }

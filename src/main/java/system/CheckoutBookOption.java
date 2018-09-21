@@ -22,7 +22,7 @@ public class CheckoutBookOption implements Option {
     public void checkout(int id){
         Book book = libraryManagement.getBookById(id);
         if(book != null && book.isAvailable()){
-            book.checkoutBook();
+            book.checkoutItem();
             this.checkoutSuccess = true;
         }
     }
